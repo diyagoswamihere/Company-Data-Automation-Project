@@ -1,0 +1,64 @@
+{
+  "automation_workflow": {
+    "part_a": {
+      "description": "Company revenue determination and tiering",
+      "data_sources": [
+        "Manual revenue database (researched)",
+        "Google Gemini AI for revenue queries",
+        "Enhanced web search via SerpAPI",
+        "Yahoo Finance for public companies"
+      ],
+      "process": [
+        "Extract company name and domain from Excel",
+        "Check manual revenue database first",
+        "Query Gemini AI for revenue information",
+        "Search for revenue using multiple web patterns",
+        "Parse revenue from text using enhanced regex",
+        "Assign tier based on revenue thresholds",
+        "Output to Excel with formatted revenue"
+      ],
+      "manual_data_sources": "Researched revenue figures from company websites, financial reports, and news sources"
+    },
+    "part_b": {
+      "description": "Contact information enrichment",
+      "data_sources": [
+        "SerpAPI for LinkedIn profiles",
+        "Hunter.io for email discovery",
+        "Company domain matching"
+      ],
+      "process": [
+        "Extract contact details from Excel",
+        "Find company domain through search",
+        "Search LinkedIn for profile and designation",
+        "Use Hunter.io to find work email",
+        "Output enriched contact data to Excel"
+      ]
+    }
+  },
+  "apis_used": {
+    "google_gemini": "AI-powered revenue research and data extraction",
+    "serpapi": "Web search for revenue and LinkedIn profiles",
+    "hunter_io": "Email discovery by domain",
+    "yahoo_finance": "Financial data for public companies"
+  },
+  "manual_fallback_data": {
+    "description": "Researched revenue figures for companies when APIs fail",
+    "companies_covered": [
+      "Wincanton",
+      "Expeditors",
+      "Black Sheep UK",
+      "Davies Turner",
+      "Edrington",
+      "Bahrain Post",
+      "Kuwait Post",
+      "Jotun Paints GCC",
+      "MAF",
+      "Gulftainer"
+    ],
+    "data_sources": "Company websites, annual reports, financial news"
+  },
+  "rate_limiting": {
+    "delay_between_requests": "2 seconds",
+    "error_handling": "Try-catch with multiple fallback methods"
+  }
+}
